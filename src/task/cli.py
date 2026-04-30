@@ -1,13 +1,20 @@
+import argparse
+
 from task.settings import clear
 
 
-def build_parser() -> None:
-    print("It works!")
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser()
+
+    return parser
 
 
 def run() -> None:
     clear()  # limpa o terminal
-    build_parser()
+    parser = build_parser()
+
+    args = parser.parse_args()
+    print(args)
 
 
 if __name__ == "__main__":
